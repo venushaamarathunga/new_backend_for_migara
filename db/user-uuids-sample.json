@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5dbf2de62f3bc53a3c5f8b9f"},"accessType":"app","userId":{"$oid":"5dbf2de6165f125978fc9d3d"},"uuid":"d1f5b88f-d92d-4bf3-ac2b-ae71c56d47e8","__v":0}
+{"_id":{"$oid":"5de60cfa7ecd5c7f3754ab16"},"accessType":"portal","userId":{"$oid":"5dd4f4af7ecd5c7f37548776"},"uuid":"7495ebd0-f83b-4959-a650-d3a0a13360bd","__v":0}

@@ -1,0 +1,1 @@
+{"_id":{"$oid":"5e05ce51eca3842c778d78ca"},"vendorId":{"$oid":"5dd7884e7ecd5c7f37548f09"},"type":"FIXED","default":true,"fixed":{"$numberInt":"5"}}

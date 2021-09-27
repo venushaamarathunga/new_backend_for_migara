@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5da5a0c60a1cdb24d0891d31"},"clientId":"testClient","clientSecret":"secret","grants":["password","authorization_code","client_credentials"]}
+{"_id":{"$oid":"5db69f1199c8ce624cea5dd8"},"clientId":"public-client","isPublic":true,"grants":["password","authorization_code"],"__v":{"$numberInt":"1"},"redirectUris":[],"tempClientSecret":{"expiresAt":{"$date":{"$numberLong":"1572600036229"}},"clientSecret":"lw3t7qp3wnh"}}

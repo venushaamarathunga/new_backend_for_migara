@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5dd4f4af7ecd5c7f37548776"},"name":"Kamal","password":"ef51306214d9a6361ee1d5b452e6d2bb70dc7ebb85bf9e02c3d4747fb57d6bec","roles":["PORTAL_USER"],"username":"kamal"}
+{"_id":{"$oid":"5dbf2de6165f125978fc9d3d"},"firebaseToken":"firebase-token-123","name":"Nimal","password":"ef51306214d9a6361ee1d5b452e6d2bb70dc7ebb85bf9e02c3d4747fb57d6bec","roles":["APP_USER"],"username":"nimal"}

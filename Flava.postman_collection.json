@@ -1,0 +1,942 @@
+{
+  "info": {
+    "_postman_id": "86e09e62-e029-4415-b143-7f16bc575add",
+    "name": "Flava copy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. signup (register user) using mini card",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 3661f4f9a8bd78da0c31c6d6f908fdf4f532261f",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"id\": \"d1f5b88f-d92d-4bf3-ac2b-ae71c56d47e8\",\n\t\"mobileNumber\": \"0700000002\",\n\t\"deviceId\": \"default\",\n\t\"name\": \"Perera\",\n\t\"clientId\": \"public-client\"\n}"
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/signup",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["signup"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. signup (register user) using app",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer 3661f4f9a8bd78da0c31c6d6f908fdf4f532261f",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"mobileNumber\": \"0734567893\",\n\t\"deviceId\": \"qwerer\",\n\t\"name\": \"Silva\",\n\t\"clientId\": \"public-client\",\n\t\"challenge\": \"ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad\"\n}"
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/signup",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["signup"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. verify registered/ unregistered user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer sdf",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"mobileNumber\": \"0734567893\",\n\t\"clientId\": \"public-client\",\n\t\"code\": \"6141\",\n\t\"verifier\": \"abc\"\n}"
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/user/verify",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["user", "verify"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer sdf",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "testClient",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "secret",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "resource_api",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "authorization_code",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "code",
+              "value": "abc",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "redirect_uri",
+              "value": "http://www.test.com",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "111",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "1234567890",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/oauth2/token",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["oauth2", "token"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. authorize flava terminal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer sdf",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "public-client",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "user:profile user:offers:redeem",
+              "type": "text"
+            },
+            {
+              "key": "challenge",
+              "value": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/auth/authorize/terminal",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["auth", "authorize", "terminal"]
+        }
+      },
+      "response": [
+        {
+          "name": "authorize terminal using pkce",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sdf",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "public-client",
+                  "type": "text"
+                },
+                {
+                  "key": "scope",
+                  "value": "user:profile user:offers:redeem",
+                  "type": "text"
+                },
+                {
+                  "key": "challenge",
+                  "value": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://{{host}}:8080/auth/authorize/terminal",
+              "protocol": "http",
+              "host": ["{{host}}"],
+              "port": "8080",
+              "path": ["auth", "authorize", "terminal"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "90"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"5a-cA1dbrLWCIxV1ArCYEf/i/aoKCU\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 01 Nov 2019 09:15:36 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"code\": \"05091c964955b4dcbb1fd2671c7986ee172bec43\",\n    \"expiresAt\": \"2019-11-01T09:20:36.229Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "5. get flava terminal client secret",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer sdf",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "public-client",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "authorization_code",
+              "type": "text"
+            },
+            {
+              "key": "code",
+              "value": "05091c964955b4dcbb1fd2671c7986ee172bec43",
+              "type": "text"
+            },
+            {
+              "key": "verifier",
+              "value": "abc",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/auth/token/terminal",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["auth", "token", "terminal"]
+        }
+      },
+      "response": [
+        {
+          "name": "get terminal client secret using the authorization code",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sdf",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "public-client",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code",
+                  "type": "text"
+                },
+                {
+                  "key": "code",
+                  "value": "05091c964955b4dcbb1fd2671c7986ee172bec43",
+                  "type": "text"
+                },
+                {
+                  "key": "verifier",
+                  "value": "abc",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://{{host}}:8080/auth/token/terminal",
+              "protocol": "http",
+              "host": ["{{host}}"],
+              "port": "8080",
+              "path": ["auth", "token", "terminal"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "69"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"45-eEOuS//3d/Ln/EEshoUtFbrmppc\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 01 Nov 2019 09:16:14 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"expiresAt\": \"2019-11-01T09:20:36.229Z\",\n    \"clientSecret\": \"lw3t7qp3wnh\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "6. get user token from flava terminal",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": "Bearer sdf",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "public-client",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "a7ppzwbho9b",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "d1f5b88f-d92d-4bf3-ac2b-ae71c56d47e8",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "default",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/auth/token",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["auth", "token"]
+        }
+      },
+      "response": [
+        {
+          "name": "get user token from terminal using the run time client secret",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer sdf",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "public-client",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "lw3t7qp3wnh",
+                  "type": "text"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "0734567890",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "default",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://{{host}}:8080/auth/oauth2/token",
+              "protocol": "http",
+              "host": ["{{host}}"],
+              "port": "8080",
+              "path": ["auth", "oauth2", "token"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin, Accept-Encoding"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-store"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "159"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"9f-KYd3Q7pisVQEw6rf7obqpyNpc0k\""
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 01 Nov 2019 09:16:58 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"access_token\": \"4a2294c35c0cf189fd1da6a90290cf2df052c70b\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 86399,\n    \"refresh_token\": \"646d0378b653006b25097a86b04fdaedf3b2d20e\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "7. authorize mobile",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer sdf",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "public-client",
+              "type": "text"
+            },
+            {
+              "key": "scope",
+              "value": "user:profile user:offers:redeem",
+              "type": "text"
+            },
+            {
+              "key": "response_type",
+              "value": "code",
+              "type": "text"
+            },
+            {
+              "key": "challenge",
+              "value": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+              "type": "text"
+            },
+            {
+              "key": "mobile_number",
+              "value": "0700000001",
+              "type": "text"
+            },
+            {
+              "key": "device_id",
+              "value": "qwerer",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/auth/authorize/mobile",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["auth", "authorize", "mobile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "8. get user token from mobile",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer sdf",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "public-client",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "authorization_code",
+              "type": "text"
+            },
+            {
+              "key": "code",
+              "value": "a4c3becc9e55a47a00394d944d1644999401fca9",
+              "type": "text"
+            },
+            {
+              "key": "verifier",
+              "value": "abc",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/auth/token",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["auth", "token"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "9. patch redeemable item status",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/users/aaa/redeemables/0001",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["users", "aaa", "redeemables", "0001"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10. patch add or remove users points",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"delta\": -5\n\t\n}"
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/users/aaa/points",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["users", "aaa", "points"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "11. get user profile details",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/users/aaa",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["users", "aaa"],
+          "query": [
+            {
+              "key": "",
+              "value": "45",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "12. get vendors details",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/users/aaa/vendors",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["users", "aaa", "vendors"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "13. get vendors redeemables page",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/users/aaa/vendors/bbb/redeemable?page=1&pageSize=10",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["users", "aaa", "vendors", "bbb", "redeemable"],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "pageSize",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "14. get vendors promotions details",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/users/aaa/vendors/bbb/promotions",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["users", "aaa", "vendors", "bbb", "promotions"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "15. get promotions validate",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/promotions/validate",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["promotions", "validate"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "16. post create promotion",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": " {\n\t\"title\" :  \"promotion.title\",\n\t\"thumbnailImageUrl\" : \"promotion.thumbnailImageUrl\",\n\t\"largeImageUrl\" : \"promotion.largeImageUrl\",\n\t\"briefDescription\" : \"promotion.briefDescription\",\n\t\"detailedDescription\" : \"promotion.detailedDescription\",\n\t\"expiresAt\": \"2019-11-05\"\n}"
+        },
+        "url": {
+          "raw": "http://{{host}}:8080/promotions/create",
+          "protocol": "http",
+          "host": ["{{host}}"],
+          "port": "8080",
+          "path": ["promotions", "create"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

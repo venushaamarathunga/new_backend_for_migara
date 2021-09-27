@@ -1,0 +1,11 @@
+version: "3"
+services:
+  node_dev_env:
+    build: .
+    container_name: node-docker
+    environment:
+      NODE_ENV: ${NODE_ENV}
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    volumes:
+      - ./:/home/app
